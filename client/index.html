@@ -5,16 +5,23 @@
   </head>
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
-
+    <button id="fortuneCookie">Crack Open a Fortune Cookie</button>
+    <button id="getCandy">Get Candy</button>
+    <button id="learnAboutTatooine">Learn about Tatooine</button>
+    <form>
+    </br>
+      <label>Whats your favorite candy?</label></br>
+      <input type = "text" id="candy"></br>
+      <label>And your favorite flavor?</label></br>
+      <input type = "text" id="flavor"></br>
+      <label>paste url here</label></br>
+      <input type = "text" id="image-url"></br>
+      <button id="submitCandy">Submit</button>
+    </form>
+  </br>
+    <section id="tatooine-container"></section>
+    <section id="candy-container"></section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-      document.getElementById("complimentButton").onclick = function () {
-        axios.get("http://localhost:4000/api/compliment/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-      };
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
