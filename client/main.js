@@ -25,38 +25,40 @@ const loadUBW = () => {
 const unlimitedBladeWorks = () => {
     axios.put(`${serverURL}push-button/update`)
     .then((res) => {
-        console.log(res)
-        let button = document.getElementById('UBW').innerText
-        switch (res.body) {
+        console.log(res.data)
+        let button = document.getElementById('UBW')
+        console.log(button)
+        switch (res.data) {
             case 1:
-                button = "I am the bone of my sword"
+                button.innerText = "I am the bone of my sword"
                 break;
             case 2:
-                button = "Steel is my body and fire is my blood"
+                button.innerText = "Steel is my body and fire is my blood"
                 break;
             case 3:
-                button = "I have created over a thousand of blades"
+                button.innerText = "I have created over a thousand of blades"
                 break;
             case 4:
-                button = "Unknown to death, nor known to life"
+                button.innerText = "Unknown to death, nor known to life"
                 break;
             case 5:
-                button = "Withstood pain to create many weapons"
+                button.innerText = "Withstood pain to create many weapons"
                 break;
             case 6:
-                button = "Those hands shall never hold anything."
+                button.innerText = "Those hands shall never hold anything."
                 break;
             case 7:
-                button = "so as I pray"
+                button.innerText = "so as I pray"
                 break;
             case 8:
-                button = "Unlimited Blade Works!"
+                button.innerText = "Unlimited Blade Works!"
                 break;
             case 9:
                 loadUBW()
                 break;
         }
     })
+    .catch((err) => console.log(err))
 }
 
 

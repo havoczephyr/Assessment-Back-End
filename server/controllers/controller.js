@@ -53,7 +53,7 @@ module.exports = {
   updateButton: (req,res) => {
     if (pushTheButton <= 8){
       pushTheButton++
-      res.status(200).send(pushTheButton)
+      res.status(200).send(pushTheButton.toString())
   } else {
       res.status(400).send('no u')
   }
