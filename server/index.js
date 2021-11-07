@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const {getCompliments,getFortuneCookie, fetchCandy, createCandy} = require('./controllers/controller.js')
+const {getCompliments,getFortuneCookie, fetchCandy, createCandy, deleteCandy, updateButton} = require('./controllers/controller.js')
 
 
 app.use(cors());
@@ -13,6 +13,8 @@ app.get("/api/compliment", getCompliments)
 app.get("/api/fortune-cookie", getFortuneCookie)
 app.get("/api/candy", fetchCandy)
 app.post("/api/candy", createCandy)
+app.put("/api/push-button/update", updateButton)
+app.delete("/api/candy/:id", deleteCandy)
 
 
 const SERVER_PORT = 4000

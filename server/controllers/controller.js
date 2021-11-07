@@ -1,5 +1,7 @@
 const candyDb = require('./candy.json')
 let globalId = 2
+let pushTheButton = 0
+
 module.exports = {
   getCompliments: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!",
@@ -37,12 +39,23 @@ module.exports = {
           id: globalId,
           candy,
           flavor,
-          imageURL
+          imageURL,
       }
       candyDb.push(newCandy)
       res.status(200).send(candyDb)
+  },
+  deleteCandy: (req,res) => {
+    // console.log("ping!")
+    let index = candyDb.findIndex((ele) => ele.id === +req.params.id)
+    candyDb.splice(index, 1)
+    res.status(200).send(candyDb)
+  },
+  updateButton: (req,res) => {
+    if (pushTheButton <= 8){
+      pushTheButton++
+      res.status(200).send(pushTheButton)
+  } else {
+      res.status(400).send('no u')
   }
-
-
-
+}
 }
