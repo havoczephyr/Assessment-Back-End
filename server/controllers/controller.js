@@ -4,6 +4,7 @@ let pushTheButton = 0
 
 module.exports = {
   getCompliments: (req, res) => {
+    console.log()
         const compliments = ["Gee, you're a smart cookie!",
                        "Cool shirt!",
                        "Your Javascript skills are stellar.",

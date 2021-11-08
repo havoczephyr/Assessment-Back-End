@@ -124,7 +124,7 @@ document.getElementById("getCandy").onclick = () => {
 
 
 document.getElementById("complimentButton").onclick = () => {
-    axios.get(`${serverURL}/compliment/`)
+    axios.get(`${serverURL}compliment/`)
         .then((res) => {
           const data = res.data;
           alert(data);
